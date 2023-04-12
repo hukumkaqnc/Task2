@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <textarea name="text_test" id="text_test" cols="30" rows="10"></textarea>
+    </form>
+    <button onclick="send()">send data</button>
+    <button onclick = "read()">get data</button>
+    <script>
+        async function read(){
+            console.log("hi");
+            let response = await fetch("test.php")
+            if(response.ok){
+                let answer = await response.text();
+                console.log(answer);
+            }
+            else{
+                console.log("Error HTTP: " + response.status);
+            }
+
+        }
+        async function send(){
+            let response = await fetch("test.php",{method: 'POST', body: new FormData(document.forms[0])});
+            if(response.ok){
+                let answer = await response.text();
+                console.log(answer);
+            }
+            else{
+                console.log("Error HTTP: " + response.status);
+            }
+        }
+    </script>
+    
+</body>
+</html>
