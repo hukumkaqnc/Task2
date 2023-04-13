@@ -4,7 +4,7 @@ $title = "В-П семинар";
 $page_title = "Секретная страница";
 
 require_once __DIR__.'/boot.php';
-$stmt = pdo() ->("SELECT * FROM users");
+$stmt = pdo() ->query("SELECT * FROM users");
 $content = "";
 while ($row = $stmt -> fetch()){
     echo $row["id"];

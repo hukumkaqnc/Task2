@@ -4,7 +4,7 @@ function pdo(): PDO
 {
     static $pdo;
     if (!$pdo) {
-        $config = include __DIR__.'bd_config.php';
+        $config = include('bd_config.php');
         $dsn = 'mysql:dbname='.$config['db_name'].';host='.$config['db_host'];
         $pdo = new PDO($dsn, $config['db_user'], $config['db_pass']);
     }
