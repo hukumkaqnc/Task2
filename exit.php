@@ -7,6 +7,6 @@
     }
 
 //require("content/layout.php");
-echo $_SERVER['REQUEST_URI'];
+//echo $_SERVER['REQUEST_URI'];
 header("Location: "."auth.php");
 ?>
