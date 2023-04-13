@@ -2,5 +2,5 @@
 $title = "В-П семинар";
 $page_title = "Главная страница";
 $content = "Hukum";
-include("content/layout.php");
+require("content/layout.php");
 ?>
