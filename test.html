@@ -19,6 +19,7 @@
             if(response.ok){
                 let answer = await response.text();
                 console.log(answer);
+                textFromServer.innerHTML = answer;
             }
             else{
                 console.log("Error HTTP: " + response.status);
@@ -30,6 +31,7 @@
             if(response.ok){
                 let answer = await response.text();
                 console.log(answer);
+                textFromServer.innerHTML = answer;
             }
             else{
                 console.log("Error HTTP: " + response.status);

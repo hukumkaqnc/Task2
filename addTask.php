@@ -14,7 +14,8 @@ if (isset($_SESSION['login']) and isset($_SESSION['password']) and $_POST['task'
     $id = $_SESSION['id'];
     $pas = $_SESSION['password'];
     $task = $_POST['task'];
+    
     // require_once __DIR__ . '/boot.php';
-    $stmt = pdo()->query("INSERT INTO `tasks`(`User_id`, `Task`) VALUES ('$id','$text')");
+    $stmt = pdo()->query("INSERT INTO `tasks`(`User_id`, `Task`) VALUES ('$id','$task')");
 }
 ?>
