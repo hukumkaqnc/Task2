@@ -11,4 +11,5 @@ function pdo(): PDO
 
     return $pdo;
 }
+
 ?>

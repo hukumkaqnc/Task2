@@ -11,4 +11,5 @@ while ($row = $stmt -> fetch()){
     $content =  $content . $row['id'] . " | ". $row['login'] . " | " . $row['password'] . "<br>";
 }
 include("content/layout.php");
+
 ?>

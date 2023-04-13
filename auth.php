@@ -11,10 +11,15 @@ if(isset($_POST["login"])and isset($_POST["password"])){
         $_SESSION['id'] = $users['id'];
         $_SESSION['login'] = $users['login'];
         $_SESSION['password'] = $users['password'];
+        echo $_SESSION['id'];
+        print_r(array_keys($users));
+        print_r(array_values($users));
     }
-    print_r(array_keys($users));
-    print_r(array_values($users));
+    
+    //print_r(array_keys($users));
+    //print_r(array_values($users));
 }
+
 
 require("content/layout.php");
 ?>

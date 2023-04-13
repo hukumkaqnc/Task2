@@ -1,4 +1,4 @@
-<form action="reg.php" method="post">
+<form action="auth.php" method="post">
     <div>
         <label for="login">Логин</label>
         <input type ="text" name="login" id="login">
