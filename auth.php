@@ -1,4 +1,5 @@
 <?PHP
+//Админка: admin, admin
 $title = "Авторизация";
 $page_title = "Вход";
 $content = file_get_contents("content/form_auth.php");
