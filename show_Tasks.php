@@ -11,9 +11,11 @@ $stmt = pdo() ->query('SELECT * FROM tasks WHERE User_id ='.$id);
        
 while ($row = $stmt -> fetch()){
 
-    $content =  $content . $row['User_id'] . " | ". $row['Task'] . " | " ."<br>";
-
+    //$content =  $content . $row['User_id'] . " | ". $row['Task'] . " | " ."<br>";
+    $content = $content.  
+    "<form action='' method='post'> <div>".$row['User_id']. ' | '.$row['Task']."</div> <input type='checkbox' name='block' value='Yes' /></form>";
 }
+
 }
 else{
     $content = "Для начала авторизуйтесь.";

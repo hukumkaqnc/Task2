@@ -14,14 +14,26 @@ if (isset($_SESSION['login'])){
         
         while ($row = $stmt -> fetch()){
         
-            $content =  $content . $row['id'] . " | ". $row['login'] . " | " . $row['password'] . "<br>";
-        
+            $content =  $content ."<form action='' method='post'> <textarea cols = '1' readonly rows = '1' name = 'id'>".$row['id']."</textarea><p>" . $row['login'] . "</p><p>". $row['password']."</p></div> 
+            <input name='block' type='submit' value='Block' />
+            <input name='unlock' type='submit' value='Unlock' />";
         }
         echo 'Вы вошли как:'.$_SESSION['login'];
     }
     else{
         echo "У вас нет доступа!!!";
     }
+}
+
+if(isset($_POST['block']) && isset($_POST['id'])) 
+{
+    $id = $_POST['id'];
+    $stmt = pdo() ->query("UPDATE `users` SET `root` = '0' WHERE `users`.`id` =".$id);
+}
+if(isset($_POST['unlock']) && isset($_POST['id'])) 
+{
+    $id = $_POST['id'];
+    $stmt = pdo() ->query("UPDATE `users` SET `root` = '1' WHERE `users`.`id` =".$id);
 }
 
 include("content/layout.php");
