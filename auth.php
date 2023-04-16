@@ -15,6 +15,7 @@ if(isset($_POST["login"])and isset($_POST["password"])){
         $_SESSION['id'] = $users['id'];
         $_SESSION['login'] = $users['login'];
         $_SESSION['password'] = $users['password'];
+        $_SESSION['root'] = $users['root'];
         echo 'Вы вошли как:'.$_SESSION['login'];
         
     }

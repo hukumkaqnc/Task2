@@ -4,7 +4,7 @@ $title = 'Показать задания';
 $page_title = "Мои задания";
 $content = "";
 
-if(isset($_SESSION['id'])){
+if(isset($_SESSION['id']) and isset($_SESSION['root']) and $_SESSION['root'] == 1){
 $id = $_SESSION['id'];    
 $stmt = pdo() ->query('SELECT * FROM tasks WHERE User_id ='.$id);
    
@@ -18,7 +18,7 @@ while ($row = $stmt -> fetch()){
 
 }
 else{
-    $content = "Для начала авторизуйтесь.";
+    $content = "Вы не авторизованы, либо у вас нет доступа к этой странице.";
 }
 require("content/layout.php");
 ?>
