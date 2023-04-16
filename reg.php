@@ -1,5 +1,5 @@
 <?PHP
-$title = "задание веб";
+$title = "Регистрация";
 $page_title = "Регистрация";
 $content = file_get_contents("content/form_reg.php");
 require("content/layout.php");

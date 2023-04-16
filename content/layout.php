@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href = "style.css" rel="stylesheet" type="text/css">
-    <title><? = $title ?></title>
+    <title><?php echo $title ?></title>
 </head>
 
 <body>
     <header>
         <h2>
-            <? = $page_title ?> 
+            <?php echo $page_title ?> 
         </h2>
     </header>
 <nav>
@@ -30,6 +30,9 @@
             </li>
             <li>
                 <a href="addTask.php">Добавить</a>
+            </li>
+            <li>
+                <a href="show_Tasks.php">Мои задания</a>
             </li>
         </ul>
 </nav>

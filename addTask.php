@@ -1,6 +1,6 @@
 <?PHP
 require("boot.php");
-$title = "веб - технологии";
+$title = 'Добавить задание';
 $page_title = "Вход";
 $content = "
 <form action = '' method = 'post'>
@@ -9,7 +9,7 @@ $content = "
 </form>
 ";
 require("content/layout.php");
-//require("boot.php");
+
 
 if (isset($_SESSION['login']) and isset($_SESSION['password']) and isset($_POST['task'])) {
     
@@ -17,8 +17,16 @@ if (isset($_SESSION['login']) and isset($_SESSION['password']) and isset($_POST[
     $pas = $_SESSION['password'];
     $task = $_POST['task'];
     
-    // require_once __DIR__ . '/boot.php';
+  
     $stmt = pdo()->query("INSERT INTO `tasks`(`User_id`, `Task`) VALUES ('$id','$task')");
+    //$users = pdo() ->query("select * from `tasks` where '$id' = User_id");
+    
+        
+        //while ($row = $users -> fetch()){
+        
+//$content =  $content . $row['User_id'] . " | ". $row['Task'] . " | " ."<br>";
+        
+        //}
 }
 
 ?>
